@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
+    <title>Sign in | UserHub Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="auth-body">
+    <main class="auth-shell">
+        <section class="auth-card">
+            <a class="brand brand-center" href="index.html">
+                <span class="brand-icon"><i class="fa-solid fa-layer-group"></i></span>
+                <span>UserHub <small>ADMIN PORTAL</small></span>
+            </a>
+            <div class="auth-heading">
+                <p class="eyebrow">WELCOME BACK</p>
+                <h1>Sign in to your account</h1>
+                <p>Enter your administrator credentials to continue.</p>
+            </div>
+
+            <form id="loginForm" class="form-stack">
+                <label class="field">
+                    <span>Email address</span>
+                    <span class="input-wrap"><i class="fa-regular fa-envelope"></i>
+                        <input id="email" type="email" placeholder="admin@example.com" autocomplete="username" required>
+                    </span>
+                </label>
+                <label class="field">
+                    <span>Password</span>
+                    <span class="input-wrap"><i class="fa-solid fa-lock"></i>
+                        <input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+                        <button class="password-toggle" type="button" id="togglePassword" aria-label="Show password"><i class="fa-regular fa-eye"></i></button>
+                    </span>
+                </label>
+                <div class="form-meta">
+                    <a href="forgotPassword.html">Forgot password?</a>
+                </div>
+                <button class="btn btn-primary btn-full" id="loginBtn" type="submit">
+                    <span>Sign in</span><i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <button class="btn btn-google btn-full" id="googleBtn" type="button">
+                    <i class="fa-brands fa-google"></i><span>Continue with Google</span>
+                </button>
+                <p id="loginMessage" class="form-message" role="status"></p>
+            </form>
+
+            <p class="auth-footer">Need a user account? <a href="signup.html">Create an account</a></p>
+            <p class="auth-note"><i class="fa-solid fa-shield-halved"></i> Admin access is restricted to the configured administrator account.</p>
+        </section>
+        <aside class="auth-aside">
+            <div class="aside-orb orb-one"></div><div class="aside-orb orb-two"></div>
+            <div class="aside-content">
+                <span class="aside-label">USERHUB CONTROL CENTER</span>
+                <h2>One place to manage your users and categories.</h2>
+                <p>A simple workspace for keeping your application organized.</p>
+                <div class="aside-points">
+                    <span><i class="fa-solid fa-users"></i> User management</span>
+                    <span><i class="fa-solid fa-tags"></i> Category management</span>
+                    <span><i class="fa-solid fa-lock"></i> Firebase authentication</span>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <script type="module" src="login.js"></script>
+</body>
+</html>

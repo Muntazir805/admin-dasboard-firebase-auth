@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create account | UserHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="auth-body">
+    <main class="auth-shell auth-shell-single">
+        <section class="auth-card">
+            <a class="brand brand-center" href="index.html">
+                <span class="brand-icon"><i class="fa-solid fa-layer-group"></i></span>
+                <span>UserHub <small>CREATE ACCOUNT</small></span>
+            </a>
+            <div class="auth-heading">
+                <p class="eyebrow">GET STARTED</p>
+                <h1>Create a user account</h1>
+                <p>Register a user profile for the application.</p>
+            </div>
+            <form id="signupForm" class="form-stack">
+                <label class="field"><span>Full name</span><span class="input-wrap"><i class="fa-regular fa-user"></i><input id="name" type="text" placeholder="Your full name" required maxlength="80"></span></label>
+                <label class="field"><span>Email address</span><span class="input-wrap"><i class="fa-regular fa-envelope"></i><input id="email" type="email" placeholder="name@example.com" required></span></label>
+                <label class="field"><span>Password</span><span class="input-wrap"><i class="fa-solid fa-lock"></i><input id="password" type="password" placeholder="At least 8 characters" minlength="8" required></span></label>
+                <label class="field"><span>Contact number</span><span class="input-wrap"><i class="fa-solid fa-phone"></i><input id="contact" type="tel" placeholder="Enter contact number" required maxlength="25"></span></label>
+                <label class="field"><span>Profile photo <small class="muted">(optional)</small></span><input class="file-input" id="image" type="file" accept="image/png,image/jpeg,image/webp"></label>
+                <img id="imagePreview" class="image-preview" alt="Selected profile preview">
+                <button class="btn btn-primary btn-full" id="signupBtn" type="submit">Create account <i class="fa-solid fa-arrow-right"></i></button>
+                <p id="signupMessage" class="form-message" role="status"></p>
+            </form>
+            <p class="auth-footer">Already have an account? <a href="index.html">Sign in</a></p>
+            <p class="auth-note">This page creates standard user accounts. Administrator access is configured separately.</p>
+        </section>
+    </main>
+    <script type="module" src="signup.js"></script>
+</body>
+</html>

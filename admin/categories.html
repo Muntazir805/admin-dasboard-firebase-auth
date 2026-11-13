@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories | UserHub Admin</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="admin-body">
+<div class="admin-layout">
+    <aside class="sidebar" id="sidebar">
+        <a class="brand sidebar-brand" href="index.html"><span class="brand-icon"><i class="fa-solid fa-layer-group"></i></span><span>UserHub <small>ADMIN PANEL</small></span></a>
+        <p class="sidebar-label">WORKSPACE</p>
+        <nav class="side-nav">
+            <a href="index.html"><i class="fa-solid fa-chart-pie"></i> Overview</a>
+            <a href="users.html"><i class="fa-solid fa-users"></i> Users</a>
+            <a class="active" href="categories.html"><i class="fa-solid fa-tags"></i> Categories</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="sidebar-help"><i class="fa-regular fa-circle-question"></i><span><b>Need help?</b><small>Manage your workspace</small></span></div>
+            <button id="logoutBtn" class="side-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out</button>
+        </div>
+    </aside>
+    <main class="admin-main">
+        <header class="topbar">
+            <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
+            <div><p class="topbar-kicker">WORKSPACE / CATEGORIES</p><h1>Category management</h1></div>
+            <div class="topbar-user"><span class="online-dot"></span><span id="adminEmail">Administrator</span><span class="admin-avatar"><i class="fa-solid fa-user-shield"></i></span></div>
+        </header>
+        <section class="content-area">
+            <div class="welcome-row">
+                <div><p class="eyebrow">ORGANIZATION</p><h2>Categories</h2><p>Create, edit and remove your application categories.</p></div>
+                <span class="date-chip"><i class="fa-solid fa-tags"></i> <span id="categoryTotal">0</span> categories</span>
+            </div>
+
+            <section class="panel category-form-panel">
+                <div class="panel-heading"><div><h3 id="formTitle">Add a category</h3><p>Enter a clear, unique category name.</p></div></div>
+                <form id="categoryForm" class="category-form">
+                    <label class="field category-field"><span>Category name</span><input id="categoryName" type="text" placeholder="e.g. Electronics" maxlength="60" required></label>
+                    <div class="category-actions">
+                        <button class="btn btn-primary" id="saveCategoryBtn" type="submit"><i class="fa-solid fa-plus"></i> Add category</button>
+                        <button class="btn btn-secondary hidden" id="cancelEditBtn" type="button">Cancel</button>
+                    </div>
+                </form>
+                <p id="categoryMessage" class="form-message" role="status"></p>
+            </section>
+
+            <section class="panel">
+                <div class="panel-heading"><div><h3>All categories <span class="count-pill" id="categoryCount">0</span></h3><p>Categories saved in your Firestore database</p></div></div>
+                <div class="table-scroll">
+                    <table><thead><tr><th>#</th><th>CATEGORY NAME</th><th>CREATED</th><th class="align-right">ACTIONS</th></tr></thead><tbody id="categoryTable"><tr><td colspan="4" class="table-empty">Loading categories...</td></tr></tbody></table>
+                </div>
+            </section>
+        </section>
+    </main>
+</div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<script type="module" src="categories.js"></script>
+</body>
+</html>

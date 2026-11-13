@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview | UserHub Admin</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="admin-body">
+    <div class="admin-layout">
+        <aside class="sidebar" id="sidebar">
+            <a class="brand sidebar-brand" href="index.html"><span class="brand-icon"><i class="fa-solid fa-layer-group"></i></span><span>UserHub <small>ADMIN PANEL</small></span></a>
+            <p class="sidebar-label">WORKSPACE</p>
+            <nav class="side-nav">
+                <a class="active" href="index.html"><i class="fa-solid fa-chart-pie"></i> Overview</a>
+                <a href="users.html"><i class="fa-solid fa-users"></i> Users</a>
+                <a href="categories.html"><i class="fa-solid fa-tags"></i> Categories</a>
+            </nav>
+            <div class="sidebar-bottom">
+                <div class="sidebar-help"><i class="fa-regular fa-circle-question"></i><span><b>Need help?</b><small>Manage your workspace</small></span></div>
+                <button id="logoutBtn" class="side-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out</button>
+            </div>
+        </aside>
+
+        <main class="admin-main">
+            <header class="topbar">
+                <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
+                <div><p class="topbar-kicker">WORKSPACE / OVERVIEW</p><h1>Dashboard</h1></div>
+                <div class="topbar-user"><span class="online-dot"></span><span id="adminEmail">Administrator</span><span class="admin-avatar"><i class="fa-solid fa-user-shield"></i></span></div>
+            </header>
+
+            <section class="content-area">
+                <div class="welcome-row">
+                    <div><p class="eyebrow">OVERVIEW</p><h2>Welcome back, Admin</h2><p>Here is what is happening in your workspace.</p></div>
+                    <span class="date-chip"><i class="fa-regular fa-calendar"></i> Admin workspace</span>
+                </div>
+
+                <div class="stats-grid">
+                    <article class="stat-card"><div class="stat-top"><span>Total users</span><span class="stat-icon blue"><i class="fa-solid fa-users"></i></span></div><strong id="userCount">—</strong><small>Registered accounts</small></article>
+                    <article class="stat-card"><div class="stat-top"><span>Total categories</span><span class="stat-icon violet"><i class="fa-solid fa-tags"></i></span></div><strong id="categoryCount">—</strong><small>Available categories</small></article>
+                    <article class="stat-card"><div class="stat-top"><span>Admin status</span><span class="stat-icon green"><i class="fa-solid fa-shield-halved"></i></span></div><strong class="status-value">Active</strong><small>Authenticated administrator</small></article>
+                </div>
+
+                <section class="panel">
+                    <div class="panel-heading"><div><h3>Recently registered users</h3><p>Latest accounts saved in Firestore</p></div><a class="text-link" href="users.html">View all users <i class="fa-solid fa-arrow-right"></i></a></div>
+                    <div class="table-scroll">
+                        <table><thead><tr><th>USER</th><th>EMAIL</th><th>CONTACT</th><th>REGISTERED</th></tr></thead><tbody id="recentUsers"><tr><td colspan="4" class="table-empty">Loading users...</td></tr></tbody></table>
+                    </div>
+                    <p id="dashboardMessage" class="form-message"></p>
+                </section>
+            </section>
+        </main>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

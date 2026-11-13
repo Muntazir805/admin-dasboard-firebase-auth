@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users | UserHub Admin</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="admin-body">
+<div class="admin-layout">
+    <aside class="sidebar" id="sidebar">
+        <a class="brand sidebar-brand" href="index.html"><span class="brand-icon"><i class="fa-solid fa-layer-group"></i></span><span>UserHub <small>ADMIN PANEL</small></span></a>
+        <p class="sidebar-label">WORKSPACE</p>
+        <nav class="side-nav">
+            <a href="index.html"><i class="fa-solid fa-chart-pie"></i> Overview</a>
+            <a class="active" href="users.html"><i class="fa-solid fa-users"></i> Users</a>
+            <a href="categories.html"><i class="fa-solid fa-tags"></i> Categories</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="sidebar-help"><i class="fa-regular fa-circle-question"></i><span><b>Need help?</b><small>Manage your workspace</small></span></div>
+            <button id="logoutBtn" class="side-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out</button>
+        </div>
+    </aside>
+    <main class="admin-main">
+        <header class="topbar">
+            <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
+            <div><p class="topbar-kicker">WORKSPACE / USERS</p><h1>User management</h1></div>
+            <div class="topbar-user"><span class="online-dot"></span><span id="adminEmail">Administrator</span><span class="admin-avatar"><i class="fa-solid fa-user-shield"></i></span></div>
+        </header>
+        <section class="content-area">
+            <div class="welcome-row">
+                <div><p class="eyebrow">DIRECTORY</p><h2>All users</h2><p>View accounts registered in your application.</p></div>
+                <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="userSearch" type="search" placeholder="Search name, email or contact..."></div>
+            </div>
+            <section class="panel">
+                <div class="panel-heading"><div><h3>Registered users <span class="count-pill" id="visibleCount">0</span></h3><p>User profiles stored in Firestore</p></div></div>
+                <div class="table-scroll">
+                    <table><thead><tr><th>USER</th><th>EMAIL</th><th>CONTACT</th><th>JOINED</th></tr></thead><tbody id="usersTable"><tr><td colspan="4" class="table-empty">Loading users...</td></tr></tbody></table>
+                </div>
+                <p id="usersMessage" class="form-message"></p>
+            </section>
+        </section>
+    </main>
+</div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<script type="module" src="users.js"></script>
+</body>
+</html>
